@@ -1,0 +1,12 @@
+
+function mkblogdirAndCd {
+	local cmd dir title
+	cmd="import datetime as d;x=d.datetime.now();print(str(x.year)+'/'+str(x.month)+'/'+str(x.day))"
+	dir=$(python -c "$cmd")
+	title="blog"
+	if [ ! -z $1 ];then
+		title="$1"
+	fi
+	mkdir -p "$dir" && cd "$dir" && vim "$title"
+	return 0
+}
