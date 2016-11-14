@@ -1,6 +1,6 @@
 
 #doall=add * ; commit m=$MSG ; push ;
-.PHONY:doall add commit push andcommit help newblog
+.PHONY:doall add commit push andcommit help blog ls
 
 help:
 	@echo "newblog title=?"
@@ -20,6 +20,10 @@ push:
 andcommit: add commit
 
 .ONESHELL:
-newblog:
+blog:
 	@source ./Makefile.rc
 	@mkblogdirAndCd ${title}
+.ONESHELL:
+ls:
+	@source ./Makefile.rc
+	@lsblogDir
