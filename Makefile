@@ -9,8 +9,8 @@ help:
 doall:add commit push
 
 add:
-	@git add * 
-	@git add .[!.]*
+	@git add '*'
+	@git add '.[!.]*'
 
 commit: 
 	@git commit -m "${m}"

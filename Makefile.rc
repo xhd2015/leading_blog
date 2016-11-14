@@ -1,6 +1,6 @@
 
 function getBlogdir {
-	cmd="import datetime as d;x=d.datetime.now();print(str(x.year)+'/'+str(x.month)+'/'+str(x.day))"
+	cmd="import datetime as d;mapping=['Jan','Feb','Mar','Apr','May','June','July','Aug','Sept','Oct','Nov','Dec'];x=d.datetime.now();print(str(x.year)+'/'+mapping[x.month-1]+'/'+str(x.day))"
 	python3 -c "$cmd"
 	return 0
 }
